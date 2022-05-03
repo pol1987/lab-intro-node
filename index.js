@@ -61,13 +61,19 @@ class SortedList {
   }
 
   avg() {
-    let sumElem = this.items.sum()
-    let average = sumElem / this.items.length
+    let counter = 0; 
     if (this.items.length === 0) {
       throw new Error("EmptySortedList");
-    } 
+    } else {
+                 
+      for (let i = 0; i < this.items.length; i++) {
+         counter += this.items[i]         
+      }      
+    }   
+    let average = counter / this.items.length 
     return average
-  }
+  }    
+  
 }
 
 module.exports = SortedList;
